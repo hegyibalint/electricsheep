@@ -5,12 +5,14 @@
 </script>
 
 
-<header class="absolute top-0 left-0 w-full h-20">
-	<a href="/"><img alt="home" src="/favicon-inverted.ico" class="h-16 pt-4 pl-4"/></a>
+<header class="absolute top-0 left-0 p-5 h-20 m-auto ">
+	<a href="/" class="font-bold">Electric Sheep</a>
 	<!--p>{data.name}</p-->
 </header>
 
 <div class="title-box text-center">
+
+	<img alt="home" src="/steampunk-sheep-face.png" class="m-auto h-20 pt-4"/>
 	<h1 class="text-3xl font-bold underline m-5">Leaderboard</h1>
 
 	<div class="table mx-auto">

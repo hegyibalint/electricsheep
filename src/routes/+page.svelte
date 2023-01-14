@@ -8,7 +8,7 @@
 	<h1 class="text-3xl font-bold underline m-5">Electric Sheep</h1>
 	<p class="m-5">Can you tell a robot from a human?</p>
 
-	<button class="mt-2 py-2 px-10 border-black border-2 rounded-md">Try</button>
+	<a href="/chat" class="mt-2 py-2 px-10 border-black border-2 rounded-md no-underline">Try</a>
 
 	<h3 class="text-xl font-bold underline mt-10 m-5"><a href="/leaderboard">Leaderboard</a></h3>
 
