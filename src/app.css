@@ -1,6 +1,14 @@
 @tailwind base;
 @layer {
+    body {
+        @apply p-4 flex flex-col justify-center items-center h-screen bg-yellow-50
+    }
+    * { 
+        @apply font-mono
+    }
+    a {
+        @apply underline
+    }
 }
-
 @tailwind components;
 @tailwind utilities;

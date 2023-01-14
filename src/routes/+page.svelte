@@ -4,14 +4,17 @@
 	export let data: PageData;
 </script>
 
-<h1 class="text-3xl font-bold underline">Hello world!</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<div class="title-box text-center">
+	<h1 class="text-3xl font-bold underline m-5">Electric Sheep</h1>
+	<p class="m-5">Can you tell a robot from a human?</p>
 
-<ul>
+	<button class="mt-2 py-2 px-10 border-black border-2 rounded-md">Try</button>
+</div>
+
+<img alt="Cyborg sheep face" src="/steampunk-sheep.jpg" width="30%" class="m-10"/>
+
+<!--ul>
 	{#each data.scores as score}
 		<li>{score.name}: {score.score}</li>
 	{/each}
-</ul>
-
-<style>
-</style>
+</ul-->
