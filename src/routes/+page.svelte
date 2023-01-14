@@ -8,9 +8,9 @@
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
 <ul>
-    {#each data.scores as score}
-        <li>{ score.name }: {score.score}</li>
-    {/each}
+	{#each data.scores as score}
+		<li>{score.name}: {score.score}</li>
+	{/each}
 </ul>
 
 <style>
