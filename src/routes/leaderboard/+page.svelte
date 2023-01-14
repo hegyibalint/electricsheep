@@ -4,13 +4,14 @@
 	export let data: PageData;
 </script>
 
+
+<header class="absolute top-0 left-0 w-full h-20">
+	<a href="/"><img alt="home" src="/favicon-inverted.ico" class="h-16 pt-4 pl-4"/></a>
+	<!--p>{data.name}</p-->
+</header>
+
 <div class="title-box text-center">
-	<h1 class="text-3xl font-bold underline m-5">Electric Sheep</h1>
-	<p class="m-5">Can you tell a robot from a human?</p>
-
-	<button class="mt-2 py-2 px-10 border-black border-2 rounded-md">Try</button>
-
-	<h3 class="text-xl font-bold underline mt-10 m-5"><a href="/leaderboard">Leaderboard</a></h3>
+	<h1 class="text-3xl font-bold underline m-5">Leaderboard</h1>
 
 	<div class="table mx-auto">
 		<div class="table-row-group">
@@ -38,9 +39,6 @@
 			</div>
 		</div>
 	</div>
-
-
-<img alt="Cyborg sheep face" src="/steampunk-sheep.jpg" class="mx-auto my-10 w-60"/>
 
 </div>
 

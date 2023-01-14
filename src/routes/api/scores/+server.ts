@@ -1,18 +1,46 @@
 import { json } from '@sveltejs/kit';
 
 export function GET() {
-	return json([
-		{
-			name: 'Alice',
-			score: 5
+	return json({
+		"tier_1": {
+			"human": {
+				name: 'Alice',
+				score: 88
+			},
+			"model": {
+				name: 'ChatGPT',
+				score: 91
+			}
 		},
-		{
-			name: 'Bob',
-			score: 5
+		"tier_2": {
+			"human": {
+				name: 'Bob',
+				score: 91
+			},
+			"model": {
+				name: 'GPT-3 DaVinci',
+				score: 78
+			}
 		},
-		{
-			name: 'Charlie',
-			score: 5
+		"tier_3": {
+			"human": {
+				name: 'Charlie',
+				score: 97
+			},
+			"model": {
+				name: 'nanoGPT',
+				score: 33
+			}
+		},
+		"tier_4": {
+			"human": {
+				name: 'Doug',
+				score: 100
+			},
+			"model": {
+				name: 'ELIZA',
+				score: 10
+			}
 		}
-	]);
+	});
 }
