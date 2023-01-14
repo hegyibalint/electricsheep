@@ -1,7 +1,6 @@
 import { json } from '@sveltejs/kit';
 
-/** @type {import("./$types").RequestHandler} */
-export function GET({ url }) {
+export function GET() {
 	return json([
 		{
 			name: 'Alice',
