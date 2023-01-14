@@ -1,23 +1,17 @@
 <script lang="ts">
-	export let counts: string[] = [];
+	import type { PageData } from './$types';
 
-	// const poop = fetch('/api/poop');
-	const poop = [];
+	export let data: PageData;
 </script>
 
-<h1>Welcome to SvelteKit</h1>
+<h1 class="text-3xl font-bold underline">Hello world!</h1>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
-<button
-	on:click={() => {
-		counts = [...counts, counts.length.toString()];
-	}}>Press me</button
->
-
-<p>You pressed the button times</p>
-{#each counts as count}
-	<p>I'm {count}</p>
-{/each}
+<ul>
+    {#each data.scores as score}
+        <li>{ score.name }: {score.score}</li>
+    {/each}
+</ul>
 
 <style>
 </style>
