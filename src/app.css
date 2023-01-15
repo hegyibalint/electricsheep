@@ -1,14 +1,14 @@
 @tailwind base;
 @layer base {
-    body {
-        @apply p-4 flex flex-col justify-center items-center h-full bg-yellow-50
-    }
-    * { 
-        @apply font-mono
-    }
-    a {
-        @apply underline
-    }
+	body {
+		@apply p-4 flex flex-col justify-center items-center h-full bg-yellow-50;
+	}
+	* {
+		@apply font-mono;
+	}
+	a {
+		@apply underline;
+	}
 }
 @tailwind components;
 @tailwind utilities;
