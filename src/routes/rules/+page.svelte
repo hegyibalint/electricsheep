@@ -1,4 +1,4 @@
-<div class="mx-auto text-center flex flex-col gap-5 h-fit">
+<div class="mx-auto text-center flex flex-col gap-5 h-fit max-w-3xl">
 	<h1 class="text-3xl font-bold underline m-5">The Rules</h1>
 	
 	<h3 class="text-xl font-bold">Main Goal</h3>
@@ -24,8 +24,9 @@
 		You get one point by guessing if your opponent is an AI or a real player,
 		and another point if your opponent guesses your identity wrong.
 	</p>
-	<p>
-		So try to convince them you're a robot :)		
-	</p>
+	
+	<a href="/chat" class="no-underline text-xl m-10 py-5 px-5 border-black border-2 rounded-md">Let's Play</a>
+
+	<img alt="The sheep" src="/sheep.jpg" class="mx-auto my-2 w-1/2" />
 	
 </div>

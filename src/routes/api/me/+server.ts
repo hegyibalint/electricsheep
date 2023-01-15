@@ -2,29 +2,18 @@ import { json } from '@sveltejs/kit';
 
 export const GET: RequestHandler = ({ url }: RequestEvent) => {
 	return json({
-		username: 'Alice',
-		email: 'alice@electricsheep.com',
-		last_login: 'A moment ago',
-		stats: {
-			tier_1: {
-				"total_games": 10000,
-				"total_points": 5000,
-				"discover_opponent": 2000,
-				"got_misclassified": 3000,
-			},
-			tier_2: {
-				"total_games": 10000,
-				"total_points": 5000,
-				"discover_opponent": 2000,
-				"got_misclassified": 3000,
-			},
-			tier_3: {
-				"total_games": 10000,
-				"total_points": 5000,
-				"discover_opponent": 2000,
-				"got_misclassified": 3000,
-			}
-		}
-
+			name: 'Alice',
+			avatar: '/sheep-face.png',
+			email: 'alice@electricsheep.com',
+			last_login: 'A moment ago',
+			balance: "a lot of $$$",
+			currency_symbol: "$",
+			games_left: 10,
+			rank: 33,
+			games_played_against_human: 1000,
+			games_played_against_robot: 2000,
+			success_guess_robot: 1500,
+			success_guess_human: 300,
+			success_confuse_human: 100
 	});
 };

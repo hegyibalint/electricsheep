@@ -1,139 +1,167 @@
-<script>
-	/*import type { PageData } from './$types';
+<script lang="ts">
+	import type { PageData } from './$types';
 
-	export let data: PageData; */
+	export let data: PageData;
 
-	import { SvelteTable } from "svelte-table";
-
-	// define some sample data...
-	export const rows = [
-	{ id: 1, first_name: "Marilyn", last_name: "Monroe", pet: "dog" },
-	{ id: 2, first_name: "Abraham", last_name: "Lincoln", pet: "dog" },
-	{ id: 3, first_name: "Mother", last_name: "Teresa", pet: "" },
-	{ id: 4, first_name: "John F.", last_name: "Kennedy", pet: "dog" },
-	{ id: 5, first_name: "Martin Luther", last_name: "King", pet: "dog" },
-	{ id: 6, first_name: "Nelson", last_name: "Mandela", pet: "cat" },
-	{ id: 7, first_name: "Winston", last_name: "Churchill", pet: "cat" },
-	{ id: 8, first_name: "George", last_name: "Soros", pet: "bird" },
-	{ id: 9, first_name: "Bill", last_name: "Gates", pet: "cat" },
-	{ id: 10, first_name: "Muhammad", last_name: "Ali", pet: "dog" },
-	{ id: 11, first_name: "Mahatma", last_name: "Gandhi", pet: "bird" },
-	{ id: 12, first_name: "Margaret", last_name: "Thatcher", pet: "cat" },
-	{ id: 13, first_name: "Christopher", last_name: "Columbus", pet: "dog" },
-	{ id: 14, first_name: "Charles", last_name: "Darwin", pet: "dog" },
-	{ id: 15, first_name: "Elvis", last_name: "Presley", pet: "dog" },
-	{ id: 16, first_name: "Albert", last_name: "Einstein", pet: "dog" },
-	{ id: 17, first_name: "Paul", last_name: "McCartney", pet: "cat" },
-	{ id: 18, first_name: "Queen", last_name: "Victoria", pet: "dog" },
-	{ id: 19, first_name: "Pope", last_name: "Francis", pet: "cat" },
-	// etc...
+	let array = [
+		{username:"Alice", avatar:"./sheep-face.png", total_points: 1000, games_played:1500, success_ratio: 66},
+		{username:"Bob", avatar:"./old-sheep-face.png", total_points: 900, games_played:901, success_ratio: 99},
+		{username:"Charlie", avatar:"./openai-sheep-face.png", total_points: 888, games_played:1000, success_ratio: 88},
+		{username:"Doug", avatar:"./facebook-sheep-face.png", total_points: 765, games_played:2000, success_ratio: 38},
+		{username:"Eddy", avatar:"./github-sheep-face.png", total_points: 600, games_played:2500, success_ratio: 24},
+		{username:"Alice", avatar:"./sheep-face.png", total_points: 1000, games_played:1500, success_ratio: 66},
+		{username:"Bob", avatar:"./old-sheep-face.png", total_points: 900, games_played:901, success_ratio: 99},
+		{username:"Charlie", avatar:"./openai-sheep-face.png", total_points: 888, games_played:1000, success_ratio: 88},
+		{username:"Doug", avatar:"./facebook-sheep-face.png", total_points: 765, games_played:2000, success_ratio: 38},
+		{username:"Eddy", avatar:"./github-sheep-face.png", total_points: 600, games_played:2500, success_ratio: 24},
+		{username:"Alice", avatar:"./sheep-face.png", total_points: 1000, games_played:1500, success_ratio: 66},
+		{username:"Bob", avatar:"./old-sheep-face.png", total_points: 900, games_played:901, success_ratio: 99},
+		{username:"Charlie", avatar:"./openai-sheep-face.png", total_points: 888, games_played:1000, success_ratio: 88},
+		{username:"Doug", avatar:"./facebook-sheep-face.png", total_points: 765, games_played:2000, success_ratio: 38},
+		{username:"Eddy", avatar:"./github-sheep-face.png", total_points: 600, games_played:2500, success_ratio: 24},
+		{username:"Alice", avatar:"./sheep-face.png", total_points: 1000, games_played:1500, success_ratio: 66},
+		{username:"Bob", avatar:"./old-sheep-face.png", total_points: 900, games_played:901, success_ratio: 99},
+		{username:"Charlie", avatar:"./openai-sheep-face.png", total_points: 888, games_played:1000, success_ratio: 88},
+		{username:"Doug", avatar:"./facebook-sheep-face.png", total_points: 765, games_played:2000, success_ratio: 38},
+		{username:"Eddy", avatar:"./github-sheep-face.png", total_points: 600, games_played:2500, success_ratio: 24},
+		{username:"Alice", avatar:"./sheep-face.png", total_points: 1000, games_played:1500, success_ratio: 66},
+		{username:"Bob", avatar:"./old-sheep-face.png", total_points: 900, games_played:901, success_ratio: 99},
+		{username:"Charlie", avatar:"./openai-sheep-face.png", total_points: 888, games_played:1000, success_ratio: 88},
+		{username:"Doug", avatar:"./facebook-sheep-face.png", total_points: 765, games_played:2000, success_ratio: 38},
+		{username:"Eddy", avatar:"./github-sheep-face.png", total_points: 600, games_played:2500, success_ratio: 24},
+		{username:"Alice", avatar:"./sheep-face.png", total_points: 1000, games_played:1500, success_ratio: 66},
+		{username:"Bob", avatar:"./old-sheep-face.png", total_points: 900, games_played:901, success_ratio: 99},
+		{username:"Charlie", avatar:"./openai-sheep-face.png", total_points: 888, games_played:1000, success_ratio: 88},
+		{username:"Doug", avatar:"./facebook-sheep-face.png", total_points: 765, games_played:2000, success_ratio: 38},
+		{username:"Eddy", avatar:"./github-sheep-face.png", total_points: 600, games_played:2500, success_ratio: 24},
+		{username:"Alice", avatar:"./sheep-face.png", total_points: 1000, games_played:1500, success_ratio: 66},
+		{username:"Bob", avatar:"./old-sheep-face.png", total_points: 900, games_played:901, success_ratio: 99},
+		{username:"Charlie", avatar:"./openai-sheep-face.png", total_points: 888, games_played:1000, success_ratio: 88},
+		{username:"Doug", avatar:"./facebook-sheep-face.png", total_points: 765, games_played:2000, success_ratio: 38},
+		{username:"Eddy", avatar:"./github-sheep-face.png", total_points: 600, games_played:2500, success_ratio: 24},
+		{username:"Alice", avatar:"./sheep-face.png", total_points: 1000, games_played:1500, success_ratio: 66},
+		{username:"Bob", avatar:"./old-sheep-face.png", total_points: 900, games_played:901, success_ratio: 99},
+		{username:"Charlie", avatar:"./openai-sheep-face.png", total_points: 888, games_played:1000, success_ratio: 88},
+		{username:"Doug", avatar:"./facebook-sheep-face.png", total_points: 765, games_played:2000, success_ratio: 38},
+		{username:"Eddy", avatar:"./github-sheep-face.png", total_points: 600, games_played:2500, success_ratio: 24},
+		{username:"Alice", avatar:"./sheep-face.png", total_points: 1000, games_played:1500, success_ratio: 66},
+		{username:"Bob", avatar:"./old-sheep-face.png", total_points: 900, games_played:901, success_ratio: 99},
+		{username:"Charlie", avatar:"./openai-sheep-face.png", total_points: 888, games_played:1000, success_ratio: 88},
+		{username:"Doug", avatar:"./facebook-sheep-face.png", total_points: 765, games_played:2000, success_ratio: 38},
+		{username:"Eddy", avatar:"./github-sheep-face.png", total_points: 600, games_played:2500, success_ratio: 24},
+		{username:"Alice", avatar:"./sheep-face.png", total_points: 1000, games_played:1500, success_ratio: 66},
+		{username:"Bob", avatar:"./old-sheep-face.png", total_points: 900, games_played:901, success_ratio: 99},
+		{username:"Charlie", avatar:"./openai-sheep-face.png", total_points: 888, games_played:1000, success_ratio: 88},
+		{username:"Doug", avatar:"./facebook-sheep-face.png", total_points: 765, games_played:2000, success_ratio: 38},
+		{username:"Eddy", avatar:"./github-sheep-face.png", total_points: 600, games_played:2500, success_ratio: 24},
 	];
 
-	// define column configs
-	const columns = [
-	{
-		key: "id",
-		title: "ID",
-		value: v => v.id,
-		sortable: true,
-		filterOptions: rows => {
-		// generate groupings of 0-10, 10-20 etc...
-		let nums = {};
-		rows.forEach(row => {
-			let num = Math.floor(row.id / 10);
-			if (nums[num] === undefined)
-			nums[num] = { name: `${num * 10} to ${(num + 1) * 10}`, value: num };
-		});
-		// fix order
-		nums = Object.entries(nums)
-			.sort()
-			.reduce((o, [k, v]) => ((o[k] = v), o), {});
-		return Object.values(nums);
-		},
-		filterValue: v => Math.floor(v.id / 10),
-		headerClass: "text-left",
-	},
-	{
-		key: "first_name",
-		title: "FIRST_NAME",
-		value: v => v.first_name,
-		sortable: true,
-		filterOptions: rows => {
-		// use first letter of first_name to generate filter
-		let letrs = {};
-		rows.forEach(row => {
-			let letr = row.first_name.charAt(0);
-			if (letrs[letr] === undefined)
-			letrs[letr] = {
-				name: `${letr.toUpperCase()}`,
-				value: letr.toLowerCase(),
-			};
-		});
-		// fix order
-		letrs = Object.entries(letrs)
-			.sort()
-			.reduce((o, [k, v]) => ((o[k] = v), o), {});
-		return Object.values(letrs);
-		},
-		filterValue: v => v.first_name.charAt(0).toLowerCase(),
-	},
-	{
-		key: "last_name",
-		title: "LAST_NAME",
-		value: v => v.last_name,
-		sortable: true,
-		filterOptions: rows => {
-		// use first letter of last_name to generate filter
-		let letrs = {};
-		rows.forEach(row => {
-			let letr = row.last_name.charAt(0);
-			if (letrs[letr] === undefined)
-			letrs[letr] = {
-				name: `${letr.toUpperCase()}`,
-				value: letr.toLowerCase(),
-			};
-		});
-		// fix order
-		letrs = Object.entries(letrs)
-			.sort()
-			.reduce((o, [k, v]) => ((o[k] = v), o), {});
-		return Object.values(letrs);
-		},
-		filterValue: v => v.last_name.charAt(0).toLowerCase(),
-	},
-	{
-		key: "pet",
-		title: "Pet",
-		value: v => v.pet,
-		renderValue: v => v.pet.charAt(0).toUpperCase() + v.pet.substring(1), // capitalize
-		sortable: true,
-		filterOptions: ["bird", "cat", "dog"], // provide array
-	},
-	];
+	// Holds table sort state.  Initialized to reflect table sorted by id column ascending.
+	let sortBy = {col: "success_ratio", ascending: true};
+	
+	$: sort = (column) => {
+		
+		if (sortBy.col == column) {
+			sortBy.ascending = !sortBy.ascending
+		} else {
+			sortBy.col = column
+			sortBy.ascending = true
+		}
+		
+		// Modifier to sorting function for ascending or descending
+		let sortModifier = (sortBy.ascending) ? 1 : -1;
+		
+		let sort = (a, b) => 
+			(a[column] < b[column]) 
+			? -1 * sortModifier 
+			: (a[column] > b[column]) 
+			? 1 * sortModifier 
+			: 0;
+		
+		array = array.sort(sort);
+	}
 </script>
 
-<SvelteTable
-    columns="{cols}"
-    rows="{data}"
-    showExpandIcon="{true}"
-    expandSingle="{true}"
-    rowKey="id"
->
-<svelte:fragment slot="expanded" let:row>{row.detail}</svelte:fragment>
-</SvelteTable>
+<style>
+	th, td {
+		@apply py-1 px-5;
+	}
+	tbody tr:hover {
+		@apply bg-amber-100;
+	}
+
+</style>
 
 <div class="mx-auto text-center">
-	<img alt="home" src="/sheep-face.png" class="m-auto h-24 pt-4 rounded-md" />
 	<h1 class="text-3xl font-bold underline m-5">Leaderboard</h1>
+	
+	<div class="flex flex-wrap justify-around">
 
-	<div class="table mx-auto">
-		<div class="table-row-group">
-			<div class="table-row">
-				<div class="table-cell text-left">Tier 1:</div>
-				<div class="table-cell text-left pl-5">
-					{data.scores.human.name} ({data.scores.human.score}%) / {data.scores.model.name} ({data.scores.model.score}%)
-				</div>
-			</div>
+		<div>
+			<h2 class="text-xl font-bold underline m-5">Best Combined Score</h2>
+			<ol>
+				<li>Alice</li>
+				<li>Bob</li>
+				<li>Charlie</li>
+			</ol>	
 		</div>
+
+		<div>
+			<h2 class="text-xl font-bold underline m-5">Best Robot Hunters</h2>
+			<ol>
+				<li>Alice</li>
+				<li>Bob</li>
+				<li>Charlie</li>
+			</ol>	
+		</div>
+
+		<div>
+			<h2 class="text-xl font-bold underline m-5">Best Human Detectors</h2>
+			<ol>
+				<li>Alice</li>
+				<li>Bob</li>
+				<li>Charlie</li>
+			</ol>	
+		</div>
+
+		<div>
+			<h2 class="text-xl font-bold underline m-5">Best At Being Robots</h2>
+			<ol>
+				<li>Alice</li>
+				<li>Bob</li>
+				<li>Charlie</li>
+			</ol>	
+		</div>
+
 	</div>
+
+	<table class="m-auto mt-10">
+		<thead>
+			<tr class="bg-amber-100">
+				<th></th>
+				<th on:click={sort("success_ratio")}>Success Ratio</th>
+				<th on:click={sort("total_points")}>Total Points</th>
+				<th on:click={sort("games_played")}>Games Played</th>
+				<th on:click={sort("total_points")}>Detected Human</th>
+				<th on:click={sort("total_points")}>Detected Robot</th>
+				<th on:click={sort("total_points")}>Mistaken for Robot</th>
+			</tr>
+		</thead>
+		<tbody>
+			{#each array as row}
+				<tr>
+					<td class="flex gap-4">
+						<img alt="{row.username}'s avatar" src={row.avatar} class="w-7 h-7 rounded-full">
+						<p class="h-fit my-auto text-left">{row.username}</p>
+					</td>
+					<td>{row.success_ratio} %</td>
+					<td>{row.total_points}</td>
+					<td>{row.games_played}</td>
+				</tr>
+			{/each}
+		</tbody>
+	</table>
+
+	<p class="text-xs py-10" style="transform: skew(-7deg);">Top 100 by total points. Only includes players with at least 10 games.</p>
+
 </div>

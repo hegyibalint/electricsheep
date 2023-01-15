@@ -2,60 +2,177 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
+
+	data.me.games_played = data.me.games_played_against_human + data.me.games_played_against_robot
+	data.me.failure_guess_human = data.me.games_played_against_human - data.me.success_guess_human
+	data.me.failure_guess_robot = data.me.games_played_against_robot - data.me.success_guess_robot
+	data.me.success_guess = data.me.success_guess_human + data.me.success_guess_robot
 </script>
 
-<div class="mx-auto text-center">
-	<img alt="home" src="/sheep-face.png" class="m-auto h-24 pt-4 rounded-md" />
+<div class="mx-auto w-lg text-center">
 	<h1 class="text-3xl font-bold underline m-5">Settings</h1>
-	<p>Username: {data.me.name}</p>
 
-	<h2 class="font-bold underline m-5">Billing</h2>
-	<p>Balance: $$$ (X games left)</p>
-	<a href="#">Add</a>
-	<a href="#">Change payment method</a>
-
-	<h2 class="font-bold underline m-5">Stats</h2>
-	<p>Tier X: 33th place</p>
-	<p>Accuracy: 24%</p>
-
-	<p class="py-5">
-		Your <a href="https://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a>:
-	</p>
-
-	<div class="table mx-auto text-center">
+	<h2 id="user-data" class="font-bold underline m-5">User Data</h2>
+	<div class="table mx-auto text-left">
 		<div class="table-row-group">
 			<div class="table-row">
-				<div class="table-cell">X</div>
-				<div class="table-cell">Is Human</div>
-				<div class="table-cell">Is Robot</div>
+				<div class="table-cell"><p>Username:</p></div>
+				<div class="table-cell"><p>{data.me.name}</p></div>
 			</div>
 		</div>
 		<div class="table-row-group">
 			<div class="table-row">
-				<div class="table-cell">Guess Human</div>
-				<div class="table-cell">10</div>
-				<div class="table-cell">5</div>
+				<div class="table-cell"><p>Email:</p></div>
+				<div class="table-cell"><p>{data.me.email}</p></div>
 			</div>
 		</div>
 		<div class="table-row-group">
 			<div class="table-row">
-				<div class="table-cell">Guess Robot</div>
-				<div class="table-cell">7</div>
-				<div class="table-cell">2</div>
+				<div class="table-cell h-full align-middle p-1"><p class="">Avatar:</p></div>
+				<div class="table-cell p-1">
+					<div class="flex align-middle">
+						<img alt="user's avatar" src={data.me.avatar} class="w-20 h-20 rounded-full border-2 border-zinc-500"/>
+						<a href="#" class="my-auto mx-5">Change</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="table-row-group">
+			<div class="table-row">
+				<div class="table-cell"><p>Status:</p></div>
+				<div class="table-cell">
+					<div class="flex justify-between">
+						<p>Active</p>
+						<a href="#" class="text-right">Delete account</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<p class="text-xs italics m-10" style="transform: skew(-10deg);">
-		Please make sure you're not a robot.
-	</p>
+	<h2 id="billing" class="font-bold underline m-5">Billing</h2>
+	<div class="table mx-auto text-left">
+		<div class="table-row-group">
+			<div class="table-row">
+				<div class="table-cell"><p>Balance:</p></div>
+				<div class="table-cell">
+					<div class="flex justify-between">
+						<p>{data.me.balance}{data.me.currency_symbol}</p>
+						<a href="#" class="text-right">Details</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="table-row-group">
+			<div class="table-row">
+				<div class="table-cell"><p>Games left:</p></div>
+				<div class="table-cell">
+					<div class="flex justify-between">
+						<p>{data.me.games_left}</p>
+						<a href="#" class="text-right">Buy more</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<h2 id="stats" class="font-bold underline m-5">Stats</h2>
+
+	<div class="table mx-auto text-left">
+		<div class="table-row-group">
+			<div class="table-row">
+				<div class="table-cell"><p>Rank:</p></div>
+				<div class="table-cell"><p># {data.me.rank}</p></div>
+			</div>
+		</div>
+		<div class="table-row-group">
+			<div class="table-row">
+				<div class="table-cell"><p>Total Points:</p></div>
+				<div class="table-cell"><p>{data.me.success_guess + data.me.success_confuse_human}</p></div>
+			</div>
+		</div>
+		<div class="table-row-group">
+			<div class="table-row">
+				<div class="table-cell"><p>Games Played:</p></div>
+				<div class="table-cell"><p>{data.me.games_played}</p></div>
+			</div>
+		</div>
+		<div class="table-row-group">
+			<div class="table-row">
+				<div class="table-cell"><p> ... against humans:</p></div>
+				<div class="table-cell"><p>{data.me.games_played_against_human}</p></div>
+			</div>
+		</div>
+		<div class="table-row-group">
+			<div class="table-row">
+				<div class="table-cell"><p> ... against robots:</p></div>
+				<div class="table-cell"><p>{data.me.games_played_against_robot}</p></div>
+			</div>
+		</div>
+		<div class="table-row-group">
+			<div class="table-row">
+				<div class="table-cell"><p>Opponent classified correctly:</p></div>
+				<div class="table-cell"><p>{data.me.success_guess}</p></div>
+			</div>
+		</div>
+		<div class="table-row-group">
+			<div class="table-row">
+				<div class="table-cell"><p> ... as human:</p></div>
+				<div class="table-cell"><p>{data.me.success_guess_human}</p></div>
+			</div>
+		</div>
+		<div class="table-row-group">
+			<div class="table-row">
+				<div class="table-cell"><p> ... as robot:</p></div>
+				<div class="table-cell"><p>{data.me.success_guess_robot}</p></div>
+			</div>
+		</div>
+		<div class="table-row-group">
+			<div class="table-row">
+				<div class="table-cell"><p>You got confused for a robot:</p></div>
+				<div class="table-cell"><p>{data.me.success_confuse_human}</p></div>
+			</div>
+		</div>
+	</div>
+
+	<h2 id="confusion-matrix" class="font-bold underline m-5"><a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a></h2>
+	<div class="table confusion-matrix mx-auto text-center">
+		<div class="table-row-group">
+			<div class="table-row">
+				<div class="table-cell"></div>
+				<div class="table-cell">Guess Human</div>
+				<div class="table-cell">Guess Robot</div>
+			</div>
+		</div>
+		<div class="table-row-group">
+			<div class="table-row">
+				<div class="table-cell">Is Human</div>
+				<div class="table-cell">{data.me.success_guess_human}</div>
+				<div class="table-cell">{data.me.failure_guess_human}</div>
+			</div> 
+		</div>
+		<div class="table-row-group">
+			<div class="table-row">
+				<div class="table-cell">Is Robot</div>
+				<div class="table-cell">{data.me.failure_guess_robot}</div>
+				<div class="table-cell">{data.me.success_guess_robot}</div>
+			</div>
+		</div>
+	</div>
+
 </div>
 
 <style>
 	.table {
+		@apply w-full;
+	}
+	.confusion-matrix {
 		@apply border-t-2 border-l-2 border-zinc-500;
 	}
-	.table-cell {
+	.confusion-matrix .table-cell {
 		@apply border-b-2 border-r-2 border-zinc-500 p-2;
+	}
+	.table-cell {
+		@apply px-2;
 	}
 </style>
