@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 
-export const GET: RequestHandler = ({ url }: RequestEvent) => {
+export const GET = () => {
 	return json({
 		messages: [
 			{
