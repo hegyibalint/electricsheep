@@ -1021,7 +1021,7 @@
 		// Modifier to sorting function for ascending or descending
 		let sortModifier = sortBy.ascending ? 1 : -1;
 
-		let sort = (a: number[], b: number[]) =>
+		let sort = <T>(a: Record<string, T>, b: Record<string, T>) =>
 			a[column] < b[column] ? -1 * sortModifier : a[column] > b[column] ? 1 * sortModifier : 0;
 
 		scores = scores.sort(sort);
@@ -1039,22 +1039,22 @@
 
 	<div class="mx-auto w-fit flex flex-wrap justify-around">
 		<div>
-			<h2 class="text-xl font-bold underline m-5">Best Combined Score</h2>
+			<h2 class="text-xl font-bold m-5">Best Average Score</h2>
 			<Podium {...podiumStubs} />
 		</div>
 
 		<div>
-			<h2 class="text-xl font-bold underline m-5">Best Robot Hunters</h2>
+			<h2 class="text-xl font-bold m-5">Best Robot Hunters</h2>
 			<Podium {...podiumStubs} />
 		</div>
 
 		<div>
-			<h2 class="text-xl font-bold underline m-5">Best Human Detectors</h2>
+			<h2 class="text-xl font-bold m-5">Best Human Detectors</h2>
 			<Podium {...podiumStubs} />
 		</div>
 
 		<div>
-			<h2 class="text-xl font-bold underline m-5">Best At Being Robots</h2>
+			<h2 class="text-xl font-bold m-5">Best At Being Robots</h2>
 			<Podium {...podiumStubs} />
 		</div>
 	</div>
@@ -1067,7 +1067,7 @@
 					<th
 						on:click={() => {
 							sort('success_ratio');
-						}}>Success Ratio</th
+						}}>Average score</th
 					>
 					<th
 						on:click={() => {
@@ -1103,7 +1103,7 @@
 							<img alt="{row.username}'s avatar" src={row.avatar} class="w-7 h-7 rounded-full" />
 							<p class="h-fit my-auto text-left">{row.username}</p>
 						</td>
-						<td>{row.success_ratio}%</td>
+						<td>{row.success_ratio / 100}</td>
 						<td>{row.total_points}</td>
 						<td>{row.games_played}</td>
 						<td>{row.detected_humans}%</td>
