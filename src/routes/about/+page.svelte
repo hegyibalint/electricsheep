@@ -1,10 +1,10 @@
 <div class="mx-auto text-center">
 	<h1 class="text-3xl font-bold underline m-5">About Us</h1>
 
-	<div class="text-xl text-left py-14 md:w-1/2 w-5/6 m-auto">
-		<p class="pb-3" style="transform: skew(-7deg);">
+	<div class="text-xl text-left p-14 pb-10 w-full md:w-1/2 -m-1 md:m-auto bg-white rounded-lg">
+		<p class="pb-3">
 			“Do you ever dream of electric sheep?”
-		<p class="" style="transform: skew(-7deg);">
+		<p>
 			“As a machine learning model, I do not have the ability to dream.”
 		</p>
 		<p class="text-sm text-right pt-5" style="transform: skew(-7deg);">

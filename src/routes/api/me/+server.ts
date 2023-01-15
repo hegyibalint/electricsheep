@@ -6,7 +6,7 @@ export const GET: RequestHandler = ({ url }: RequestEvent) => {
 			avatar: '/sheep-face.png',
 			email: 'alice@electricsheep.com',
 			last_login: 'A moment ago',
-			balance: "a lot of $$$",
+			balance: "20",
 			currency_symbol: "$",
 			games_left: 10,
 			rank: 33,

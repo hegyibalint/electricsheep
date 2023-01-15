@@ -6,7 +6,7 @@
 </script>
 
 <div class="flex flex-col w-full flex-grow">
-	<header class="p-5 flex-grow-0 h-20 w-full flex justify-between">
+	<header class="p-5 flex-grow-0 h-20 w-full max-w-3xl m-auto flex justify-between">
 		<a href="/" class="font-bold">Home</a>
 		<a href="/me" class="font-bold">Settings</a>
 	</header>
@@ -18,6 +18,7 @@
 	<footer class="w-full flex-grow-0 h-12 mt-10 text-center">
 		<div class="flex justify-center gap-4 pb-2">
 			<a href="/rules" class="text-xs">The Rules</a>
+			<a href="/leaderboard" class="text-xs">Leaderboard</a>
 			<a href="/about" class="text-xs">About Us</a>
 			<a href="https://github.com/hegyibalint/electricsheep" class="text-xs">GitHub</a>
 		</div>
