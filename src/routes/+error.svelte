@@ -20,5 +20,4 @@
 	<a href="/" class="font-bold text-3xl my-10">Home</a>
 
 	<img alt="The sheep" src="/sheep.jpg" class="mx-auto my-10 w-1/2 invert" />
-
 </div>
