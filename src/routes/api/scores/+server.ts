@@ -2,45 +2,45 @@ import { json, type RequestEvent, type RequestHandler } from '@sveltejs/kit';
 
 export const GET: RequestHandler = ({ url }: RequestEvent) => {
 	return json({
-		"tier_1": {
-			"human": {
+		tier_1: {
+			human: {
 				name: 'Alice',
 				score: 88
 			},
-			"model": {
+			model: {
 				name: 'ChatGPT',
 				score: 91
 			}
 		},
-		"tier_2": {
-			"human": {
+		tier_2: {
+			human: {
 				name: 'Bob',
 				score: 91
 			},
-			"model": {
+			model: {
 				name: 'GPT-3 DaVinci',
 				score: 78
 			}
 		},
-		"tier_3": {
-			"human": {
+		tier_3: {
+			human: {
 				name: 'Charlie',
 				score: 97
 			},
-			"model": {
+			model: {
 				name: 'nanoGPT',
 				score: 33
 			}
 		},
-		"tier_4": {
-			"human": {
+		tier_4: {
+			human: {
 				name: 'Doug',
 				score: 100
 			},
-			"model": {
+			model: {
 				name: 'ELIZA',
 				score: 10
 			}
 		}
 	});
-}
+};

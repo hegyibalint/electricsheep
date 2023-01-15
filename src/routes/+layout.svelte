@@ -5,9 +5,7 @@
 	export let data: PageData;
 </script>
 
-
 <div class="flex flex-col w-full flex-grow">
-
 	<header class="p-5 flex-grow-0 h-20 w-full flex justify-between">
 		<a href="/" class="font-bold">Home</a>
 		<a href="/me" class="font-bold">Settings</a>
@@ -25,5 +23,4 @@
 		</div>
 		<p class="text-xs">Made with <a href="https://svelte.dev/">Svelte</a></p>
 	</footer>
-
 </div>

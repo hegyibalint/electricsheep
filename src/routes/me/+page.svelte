@@ -4,20 +4,8 @@
 	export let data: PageData;
 </script>
 
-
-<style>
-	.table {
-		@apply border-t-2 border-l-2 border-zinc-500;
-	}
-	.table-cell {
-		@apply border-b-2 border-r-2 border-zinc-500 p-2;
-	}
-</style>
-
-
-
 <div class="mx-auto text-center">
-	<img alt="home" src="/sheep-face.png" class="m-auto h-24 pt-4 rounded-md"/>
+	<img alt="home" src="/sheep-face.png" class="m-auto h-24 pt-4 rounded-md" />
 	<h1 class="text-3xl font-bold underline m-5">Settings</h1>
 	<p>Username: {data.me.name}</p>
 
@@ -30,7 +18,9 @@
 	<p>Tier X: 33th place</p>
 	<p>Accuracy: 24%</p>
 
-	<p class="py-5">Your <a href="https://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a>:</p>
+	<p class="py-5">
+		Your <a href="https://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a>:
+	</p>
 
 	<div class="table mx-auto text-center">
 		<div class="table-row-group">
@@ -56,6 +46,16 @@
 		</div>
 	</div>
 
-
-	<p class="text-xs italics m-10" style="transform: skew(-10deg);">Please make sure you're not a robot.</p>
+	<p class="text-xs italics m-10" style="transform: skew(-10deg);">
+		Please make sure you're not a robot.
+	</p>
 </div>
+
+<style>
+	.table {
+		@apply border-t-2 border-l-2 border-zinc-500;
+	}
+	.table-cell {
+		@apply border-b-2 border-r-2 border-zinc-500 p-2;
+	}
+</style>
