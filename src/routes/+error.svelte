@@ -1,15 +1,21 @@
 <script>
 	import { page } from '$app/stores';
 
-	const emojis = {
-		// TODO add the rest!
-		420: '🫠',
-        404: '??',
-		500: '💥'
+	const message = {
+        400: 'Please login.',
+        404: 'The quest continues...',
+		500: 'Please be patient while the bots figure it out :)'
 	};
 </script>
 
-<h1>{$page.status} {$page.error.message}</h1>
-<span style="font-size: 10em">
-	{emojis[$page.status] ?? emojis[500]}
-</span>
+<div class="m-auto text-center">
+	<h1 class="text-xl my-10">Error {$page.status}</h1>
+	<h1 class="text-3xl my-10 mb-80">{$page.error.message}</h1>
+
+	<p>{message[$page.status] ?? message[500]}</p>
+
+	<img alt="The sheep" src="/sheep.jpg" class="mx-auto my-10 w-1/2 invert"/>
+	
+	<a href="/" class="font-bold text-3xl">Home</a>
+
+</div>
