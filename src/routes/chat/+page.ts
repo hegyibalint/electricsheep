@@ -1,8 +1,8 @@
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async (load) => {
-	const scores = await load.fetch('/api/scores');
+	const chat = await load.fetch('/api/chat');
 	return {
-		scores: await scores.json()
+		chat: await chat.json()
 	};
 };

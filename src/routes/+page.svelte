@@ -4,49 +4,38 @@
 	export let data: PageData;
 </script>
 
-<div class="title-box text-center">
-	<h1 class="text-3xl font-bold underline m-5">Electric Sheep</h1>
-	<p class="m-5">Can you tell a robot from a human?</p>
+<div class="m-auto text-center">
+	
+	<h1 class="text-3xl m-10">Can you tell <span class="font-bold underline">humans</span> from <span class="font-bold underline">robots</span>?</h1>
 
-	<a href="/chat" class="mt-2 py-2 px-10 border-black border-2 rounded-md no-underline">Try</a>
+   <div class="flex justify-center">
+      <div class="flex border-2 border-black bg-white rounded-md py-2 pl-3 pr-5 w-fit">
+         <div id="g_id_onload"
+            data-client_id="GET_THE_ID"
+            data-login_uri="https://localhost:5173/"
+            data-auto_prompt="false">
+         </div>
+         <div class="g_id_signin pr-2 saturate-0 contrast-200"
+            data-type="icon"
+            data-size="extra-large"
+            data-theme="outline"
+            data-text="none"
+            data-shape="rectangular"
+            data-logo_alignment="left">
+         </div>
+         <p class="my-auto text-xl no-underline"><a href="/chat">Let me try</a></p>
+      </div>
+   </div>
+   
+   
 
-	<h3 class="text-xl font-bold underline mt-10 m-5"><a href="/leaderboard">Leaderboard</a></h3>
+	<script src="https://accounts.google.com/gsi/client" async defer></script>
 
-	<div class="table mx-auto">
-		<div class="table-row-group">
-			<div class="table-row">
-				<div class="table-cell text-left">Tier 1:</div>
-				<div class="table-cell text-left pl-5">{data.scores.tier_1.human.name} ({data.scores.tier_1.human.score}%) / {data.scores.tier_1.model.name} ({data.scores.tier_1.model.score}%)</div>
-			</div>
-		</div>
-		<div class="table-row-group">
-			<div class="table-row">
-				<div class="table-cell text-left">Tier 2:</div>
-				<div class="table-cell text-left pl-5">{data.scores.tier_2.human.name} ({data.scores.tier_2.human.score}%) / {data.scores.tier_2.model.name} ({data.scores.tier_2.model.score}%)</div>
-			</div>
-		</div>
-		<div class="table-row-group">
-			<div class="table-row">
-				<div class="table-cell text-left">Tier 3:</div>
-				<div class="table-cell text-left pl-5">{data.scores.tier_3.human.name} ({data.scores.tier_3.human.score}%) / {data.scores.tier_3.model.name} ({data.scores.tier_3.model.score}%)</div>
-			</div>
-		</div>
-		<div class="table-row-group">
-			<div class="table-row">
-				<div class="table-cell text-left">Tier 4:</div>
-				<div class="table-cell text-left pl-5">{data.scores.tier_4.human.name} ({data.scores.tier_4.human.score}%) / {data.scores.tier_4.model.name} ({data.scores.tier_4.model.score}%)</div>
-			</div>
-		</div>
+	<div class="py-3 px-10 mt-5">
+		<a href="/leaderboard" >See the stats</a>
 	</div>
 
-
-<img alt="Cyborg sheep face" src="/steampunk-sheep.jpg" class="mx-auto my-10 w-60"/>
+	<img alt="The sheep" src="/sheep.jpg" class="mx-auto my-2 w-1/3"/>
+	<p class="text-xs" style="transform: skew(-10deg);">Made by a <a href="https://huggingface.co/stabilityai/stable-diffusion-2">talented artist</a></p>
 
 </div>
-
-
-<!--ul>
-	{#each data.scores as score}
-		<li>{score.name}: {score.score}</li>
-	{/each}
-</ul-->

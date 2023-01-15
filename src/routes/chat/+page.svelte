@@ -3,36 +3,48 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
+
+	export let rotation = "";
+	rotation = "transform: rotate(" + Math.ceil(Math.random() * 360) + "deg);";
 </script>
 
 
-<header class="absolute top-0 left-0 p-5 h-20 m-auto ">
-	<a href="/" class="font-bold">Electric Sheep</a>
-	<!--p>{data.name}</p-->
-</header>
+<div class="text-center flex-grow flex flex-col">
 
-<div class="title-box text-center">
+	<div class="max-w-3xl flex-grow flex flex-col">
 
-	<img alt="home" src="/steampunk-sheep-face.png" class="m-auto h-20 pt-4"/>
-	<h1 class="text-3xl font-bold underline m-5">Chat</h1>
+		<div class="flex-grow flex flex-col border-2 rounded-lg border-zinc-500">
 
-	<div class="w-6/12 m-auto">
-
-		<div class="border-2 rounded-lg border-zinc-500 h-fit">
-
-			<div class="flex justify-between align-bottom w-full h-fit text-left p-5 border-b-2 border-zinc-500">
-				<p>Opponent</p>
-				<p class="text-xs">is typing...</p>
+			<div class="flex-grow-0 flex justify-between align-bottom w-full text-left py-3 px-6 border-b-2 border-zinc-500">
+				<div class="flex-grow-0 flex gap-4 justify-start">
+					<img alt="opponent" src="/sheep-face.png" class="flex-grow-0 h-12 w-12 rounded-full border-2 border-zinc-500" style="{rotation}"/>
+					<p class="h-fit my-auto">Your opponent</p>
+				</div>
+				<p class="h-fit my-auto">1/10 messages left</p>
 			</div>
 				
-			<div class="p-2 flex flex-col">
-				<ChatMessage class="self-start" />
-				<ChatMessage class="self-end" />
+			<div class="flex-grow flex flex-col gap-2 p-5 overflow-y-scroll h-0">
+				{ #each data.chat.messages as message}
+					{ #if message.author === "opponent"}
+					<ChatMessage class="self-start bg-yellow-100" text={message.message} />
+					{ :else}
+					<ChatMessage class="self-end bg-white" text={message.message} />
+					{ /if}
+				{/each}
 			</div>
 
-			<div>
-				<input type="text" placeholder="Type..." class="w-full border-zinc-500 rounded-lg border-t-2 p-2" />
+			<div class="flex border-zinc-500 border-t-2">
+				<input id="message-box" type="text" placeholder="Type..." class="flex-grow rounded-lg py-2 px-4" />
+				<button class="py-3 px-10 flex-grow-0 border-zinc-500 border-l-2 no-underline" on:click={() => {
+					
+				}}
+				>Send</button>
 			</div>
+		</div>
+
+		<div class="h-fit flex justify-center gap-4 p-5 pb-20">
+			<a href="/decision/human" class="no-underline text-xl py-3 px-5 border-black border-2 rounded-md">Human</a>
+			<a href="/decision/human" class="no-underline text-xl py-3 px-5 border-black border-2 rounded-md">Robot</a>
 		</div>
 
 	</div>
