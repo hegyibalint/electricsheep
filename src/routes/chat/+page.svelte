@@ -53,13 +53,11 @@
 		</div>
 
 		<div class="h-fit flex justify-center gap-4 p-5 pb-20">
-			<a
-				href="/result"
-				class="no-underline text-xl py-3 px-5 border-black border-2 rounded-md">Human</a
+			<a href="/result" class="no-underline text-xl py-3 px-5 border-black border-2 rounded-md"
+				>Human</a
 			>
-			<a
-				href="/result"
-				class="no-underline text-xl py-3 px-5 border-black border-2 rounded-md">Robot</a
+			<a href="/result" class="no-underline text-xl py-3 px-5 border-black border-2 rounded-md"
+				>Robot</a
 			>
 		</div>
 	</div>

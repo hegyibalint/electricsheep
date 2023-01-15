@@ -3,15 +3,15 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export const GET: RequestHandler = ({ url }: RequestEvent) => {
+export const GET = () => {
 	return json({
-			human: {
-				name: 'Alice',
-				score: 88
-			},
-			model: {
-				name: 'ChatGPT',
-				score: 91
-			}
+		human: {
+			name: 'Alice',
+			score: 88
+		},
+		model: {
+			name: 'ChatGPT',
+			score: 91
+		}
 	});
 };

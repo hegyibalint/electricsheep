@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageData } from '../../decision/$types';
+	import type { PageData } from './$types';
 
 	export let data: PageData;
 </script>
@@ -12,12 +12,13 @@
 		<p>Your selection: HUMAN</p>
 		<p>Your opponent was: HUMAN</p>
 
-		<a href="/chat" class="no-underline text-xl m-10 py-5 px-5 border-black border-2 rounded-md">Replay</a>
+		<a href="/chat" class="no-underline text-xl m-10 py-5 px-5 border-black border-2 rounded-md"
+			>Replay</a
+		>
 
 		<p>You're now 33th place by total score</p>
 		<a href="/me#stats" class="mt-5">Check your stats</a>
 		<a href="/leaderboard" class="mt-5">Leaderboard</a>
-		
 	</div>
 </div>
 
