@@ -11,30 +11,15 @@
 	</h1>
 
 	<div class="flex justify-center">
-		<div class="flex border-2 border-black bg-white rounded-md py-2 pl-3 pr-5 w-fit">
-			<div
-				id="g_id_onload"
-				data-client_id="GET_THE_ID"
-				data-login_uri="https://localhost:5173/"
-				data-auto_prompt="false"
-			/>
-			<div
-				class="g_id_signin pr-2 saturate-0 contrast-200"
-				data-type="icon"
-				data-size="extra-large"
-				data-theme="outline"
-				data-text="none"
-				data-shape="rectangular"
-				data-logo_alignment="left"
-			/>
-			<p class="my-auto text-xl no-underline"><a href="/chat">Let me try</a></p>
+		<div class="flex border-2 border-black bg-white rounded-md py-2 px-5 w-fit">
+			<a class="my-auto text-xl no-underline" href="/chat">Let me try</a>
 		</div>
 	</div>
 
 	<script src="https://accounts.google.com/gsi/client" async defer></script>
 
 	<div class="py-3 px-10 mt-5">
-		<a href="/leaderboard">See the stats</a>
+		<a href="/rules">Rules</a>  <a href="/leaderboard">Leaderboard</a>
 	</div>
 
 	<img alt="The sheep" src="/sheep.jpg" class="mx-auto my-2 w-1/3" />
