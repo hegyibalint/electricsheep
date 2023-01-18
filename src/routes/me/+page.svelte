@@ -9,6 +9,11 @@
 	data.me.success_guess = data.me.success_guess_human + data.me.success_guess_robot;
 </script>
 
+<header class="p-5 flex-grow-0 h-20 w-full max-w-3xl mx-auto flex justify-between">
+	<a href="/" class="font-bold">Home</a>
+	<div></div>
+</header>
+
 <div class="mx-auto max-w-3xl text-center">
 	<h1 class="text-3xl font-bold underline m-5">Settings</h1>
 
@@ -169,7 +174,7 @@
 				</div>
 			</div>
 
-			<a href="/chat" class="m-auto">Play again</a>
+			<a href="/chat" class="m-auto">Play again</a> . <a href="/leaderboard" class="m-auto">Leaderboard</a>
 		</div>
 	</div>
 </div>

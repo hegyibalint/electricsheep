@@ -12,7 +12,7 @@
 
 	<div class="flex justify-center">
 		<div class="flex border-2 border-black bg-white rounded-md py-2 px-5 w-fit">
-			<a class="my-auto text-xl no-underline" href="/chat">Let's try</a>
+			<a class="my-auto text-xl no-underline" href="/match_players">Let's try</a>
 		</div>
 	</div>
 

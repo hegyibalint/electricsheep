@@ -1034,6 +1034,13 @@
 	};
 </script>
 
+
+<header class="p-5 flex-grow-0 h-20 w-full max-w-3xl mx-auto flex justify-between">
+	<a href="/" class="font-bold">Home</a>
+	<a href="/me" class="font-bold">Settings</a>
+</header>
+
+
 <div class="w-full mx-auto text-center">
 	<h1 class="text-3xl font-bold underline m-5">Leaderboard</h1>
 
