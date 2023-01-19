@@ -3,7 +3,6 @@
 	import type { PageData } from './$types';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
-	import { svelteStore } from './store.js';
 
 	export let data: PageData;
 	export let time_left = 120;
@@ -17,22 +16,6 @@
 			browser ? goto('/result') : null;
         }
     }, 1000);
-
-    // Chat logic stub
-	export const my_identifier = Math.random();
-    let message = "";
-
-    const send = () => {
-      const value = message && message.trim();
-      if (!value) {
-        return;
-      }
-      $svelteStore.messages.push({
-        text: value,
-        author: my_identifier
-      });
-      message = "";
-    };
 
 </script>
 
@@ -61,7 +44,7 @@
 				</p>
 			</div>
 
-			<div class="flex-grow flex flex-col gap-2 p-5 overflow-y-scroll h-0">
+			<!--div class="flex-grow flex flex-col gap-2 p-5 overflow-y-scroll h-0">
 				{#each $svelteStore.messages as message}
 					{#if message.author == my_identifier}
 					<ChatMessage class="self-end bg-white" text={message.text} />
@@ -78,7 +61,7 @@
 					placeholder="Type..."
 					bind:value={message}
 				/>
-			</form>
+			</form-->
 
 		</div>
 
