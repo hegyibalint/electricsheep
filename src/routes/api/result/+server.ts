@@ -2,7 +2,7 @@ import { json } from '@sveltejs/kit';
 
 export const GET = () => {
 	return json({
-		opponent: "human",
+		opponent: 'human',
 		rank: 33
 	});
 };

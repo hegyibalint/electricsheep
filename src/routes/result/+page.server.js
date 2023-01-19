@@ -12,5 +12,3 @@ export const actions = {
 		return { guess: data.get('guess') };
 	}
 };
-
-

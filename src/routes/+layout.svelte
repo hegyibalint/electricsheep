@@ -6,7 +6,6 @@
 </script>
 
 <div class="flex flex-col w-full flex-grow">
-	
 	<div class="flex flex-col w-full flex-grow">
 		<slot />
 	</div>

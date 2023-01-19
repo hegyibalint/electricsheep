@@ -6,17 +6,25 @@
 
 	export let data: PageData;
 	export let time_left = 120;
-	export const opponent_style = 'transform: rotate(' + Math.ceil(Math.random() * 360) + 'deg); background-color: rgb('+ Math.ceil(Math.random() * 256) +', '+ Math.ceil(Math.random() * 256) +', '+ Math.ceil(Math.random() * 256) +')';
+	export const opponent_style =
+		'transform: rotate(' +
+		Math.ceil(Math.random() * 360) +
+		'deg); background-color: rgb(' +
+		Math.ceil(Math.random() * 256) +
+		', ' +
+		Math.ceil(Math.random() * 256) +
+		', ' +
+		Math.ceil(Math.random() * 256) +
+		')';
 
 	// Timer redirecting to the results
-	var timer = setInterval(function(){
-        time_left--;
-        if (time_left < 1) {
-            clearInterval(timer);
+	var timer = setInterval(function () {
+		time_left--;
+		if (time_left < 1) {
+			clearInterval(timer);
 			browser ? goto('/result') : null;
-        }
-    }, 1000);
-
+		}
+	}, 1000);
 </script>
 
 <header class="p-5 flex-grow-0 h-20 w-full max-w-3xl mx-auto flex justify-between">
@@ -62,24 +70,25 @@
 					bind:value={message}
 				/>
 			</form-->
-
 		</div>
 
 		<form method="POST" action="/result" class="h-fit flex justify-center gap-4 p-5 md:pb-20">
 			<div class="flex gap-0 border-black border-2 rounded-md">
-
 				<label>
-					<input type="radio" id="guess" name="guess" class="hiddenn" value="human">
+					<input type="radio" id="guess" name="guess" class="hiddenn" value="human" />
 					<p class="no-underline text-xl py-3 px-5 rounded-l-md border-r-2 border-black">Human</p>
 				</label>
 
 				<label>
-					<input type="radio" id="guess" name="guess" class="hiddenn" value="robot">
+					<input type="radio" id="guess" name="guess" class="hiddenn" value="robot" />
 					<p class="no-underline text-xl py-3 px-5 rounded-r-md border-black">Robot</p>
 				</label>
-
 			</div>
-			<input type="submit" class="no-underline text-xl py-3 px-5 border-black border-2 rounded-md" value="Check"/>
+			<input
+				type="submit"
+				class="no-underline text-xl py-3 px-5 border-black border-2 rounded-md"
+				value="Check"
+			/>
 		</form>
 	</div>
 </div>
@@ -94,5 +103,4 @@
 	#guess {
 		@apply hidden;
 	}
-
 </style>

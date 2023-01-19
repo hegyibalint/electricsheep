@@ -11,7 +11,7 @@
 
 <header class="p-5 flex-grow-0 h-20 w-full max-w-3xl mx-auto flex justify-between">
 	<a href="/" class="font-bold">Home</a>
-	<div></div>
+	<div />
 </header>
 
 <div class="mx-auto max-w-3xl text-center">

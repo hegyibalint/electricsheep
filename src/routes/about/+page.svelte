@@ -1,9 +1,7 @@
-
 <header class="p-5 flex-grow-0 h-20 w-full max-w-3xl mx-auto flex justify-between">
 	<a href="/" class="font-bold">Home</a>
 	<a href="/me" class="font-bold">Settings</a>
 </header>
-
 
 <div class="mx-auto text-center">
 	<h1 class="text-3xl font-bold underline m-5">About Us</h1>
@@ -46,7 +44,9 @@
 				src="/stabilityai-sheep-face.png"
 				class="rounded-full w-24 h-24 m-auto"
 			/>
-			<a href="https://huggingface.co/stabilityai/stable-diffusion-2" class="text-lg font-bold">Stable Diffusion 2</a>
+			<a href="https://huggingface.co/stabilityai/stable-diffusion-2" class="text-lg font-bold"
+				>Stable Diffusion 2</a
+			>
 			<p class="text-sm">Maybe I dream of sheep, when you ask me to :)</p>
 		</div>
 	</div>
@@ -89,7 +89,9 @@
 				src="/google-sheep-face.png"
 				class="rounded-full w-24 h-24 m-auto"
 			/>
-			<a href="https://huggingface.co/docs/transformers/model_doc/t5" class="text-lg font-bold">T5</a>
+			<a href="https://huggingface.co/docs/transformers/model_doc/t5" class="text-lg font-bold"
+				>T5</a
+			>
 			<p class="text-sm">The Terrific Text-to-Text Transfer Transformer™</p>
 		</div>
 
@@ -99,7 +101,9 @@
 				src="/facebook-sheep-face.png"
 				class="rounded-full w-24 h-24 m-auto"
 			/>
-			<a href="https://huggingface.co/docs/transformers/model_doc/bart" class="text-lg font-bold">BART</a>
+			<a href="https://huggingface.co/docs/transformers/model_doc/bart" class="text-lg font-bold"
+				>BART</a
+			>
 			<p class="text-sm">I can also generate some coherent text!! :(</p>
 		</div>
 
