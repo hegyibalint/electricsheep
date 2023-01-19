@@ -6,8 +6,12 @@
 </script>
 
 <div class="flex flex-col w-full flex-grow">
-	
-	<div class="flex flex-col w-full flex-grow">
+	<header class="p-5 flex-grow-0 h-20 w-full max-w-3xl m-auto flex justify-between">
+		<a href="/" class="font-bold">Home</a>
+		<a href="/me" class="font-bold">Settings</a>
+	</header>
+
+	<div class="flex w-full flex-grow">
 		<slot />
 	</div>
 
