@@ -1,8 +1,14 @@
 import type { PageLoad } from './$types';
 
+interface Me {
+	name: string;
+	email: string;
+}
+
 export const load: PageLoad = async (load) => {
-	const me = await load.fetch('/api/me');
+	const meRequest = await load.fetch('/api/me');
+
 	return {
-		me: await me.json()
+		me: await meRequest.json<Me>()
 	};
 };
