@@ -33,6 +33,11 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@prisma/client": "^4.8.1"
+		"@prisma/client": "^4.8.1",
+		"@syncedstore/core": "^0.4.2",
+		"@syncedstore/svelte": "^0.4.2",
+		"cld": "^2.8.4",
+		"y-webrtc": "^10.2.4",
+		"yjs": "^13.5.44"
 	}
 }
