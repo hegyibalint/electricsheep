@@ -3,8 +3,7 @@
 	import type { PageData } from './$types';
     
 	export let data: PageData = {};
-    export let guess = '';
-	guess = $page.url.searchParams.get('guess');
+    export let guess = $page.url.searchParams.get('guess');
 </script>
 
 
