@@ -2,7 +2,7 @@
 .DS_Store
 
 # NPM
-node_modules
+/node_modules
 
 # SvelteKit
 /build
@@ -19,8 +19,8 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 # Prisma files
-prisma/*.db
-prisma/*.db-journal
+/prisma/*.db
+/prisma/*.db-journal
 
 # Miniflare files
-kv-data
+/.miniflare
