@@ -1,3 +1,8 @@
+<header class="p-5 flex-grow-0 h-20 w-full max-w-3xl mx-auto flex justify-between">
+	<a href="/" class="font-bold">Home</a>
+	<a href="/me" class="font-bold">Settings</a>
+</header>
+
 <div class="mx-auto text-center">
 	<h1 class="text-3xl font-bold underline m-5">About Us</h1>
 
@@ -9,7 +14,7 @@
 		</p>
 	</div>
 
-	<h2 id="humans" class="text-xl font-bold m-5">The Humans</h2>
+	<h2 id="humans" class="text-xl font-bold m-5">The Builders</h2>
 	<div class="flex flex-wrap w-fit m-auto">
 		<div class="flex flex-col gap-2 p-5 w-60 m-auto">
 			<img
@@ -32,9 +37,21 @@
 			<p class="text-sm">Herding the bots</p>
 			<a href="https://www.deepset.ai/" class="text-xs">We're hiring</a>
 		</div>
+
+		<div class="flex flex-col gap-2 p-5 w-60 m-auto">
+			<img
+				alt="stablediffusion avatar"
+				src="/stabilityai-sheep-face.png"
+				class="rounded-full w-24 h-24 m-auto"
+			/>
+			<a href="https://huggingface.co/stabilityai/stable-diffusion-2" class="text-lg font-bold"
+				>Stable Diffusion 2</a
+			>
+			<p class="text-sm">Maybe I dream of sheep, when you ask me to :)</p>
+		</div>
 	</div>
 
-	<h2 id="robots" class="text-xl font-bold m-5">The Bots</h2>
+	<h2 id="robots" class="text-xl font-bold m-5">The Players</h2>
 	<div class="flex flex-wrap">
 		<div class="flex flex-col gap-2 p-5 w-60 m-auto">
 			<img
@@ -69,10 +86,24 @@
 		<div class="flex flex-col gap-2 p-5 w-60 m-auto">
 			<img
 				alt="chatgpt avatar"
+				src="/google-sheep-face.png"
+				class="rounded-full w-24 h-24 m-auto"
+			/>
+			<a href="https://huggingface.co/docs/transformers/model_doc/t5" class="text-lg font-bold"
+				>T5</a
+			>
+			<p class="text-sm">The Terrific Text-to-Text Transfer Transformer™</p>
+		</div>
+
+		<div class="flex flex-col gap-2 p-5 w-60 m-auto">
+			<img
+				alt="chatgpt avatar"
 				src="/facebook-sheep-face.png"
 				class="rounded-full w-24 h-24 m-auto"
 			/>
-			<a href="https://huggingface.co/facebook/rag-token-nq" class="text-lg font-bold">RAG-Token</a>
+			<a href="https://huggingface.co/docs/transformers/model_doc/bart" class="text-lg font-bold"
+				>BART</a
+			>
 			<p class="text-sm">I can also generate some coherent text!! :(</p>
 		</div>
 
