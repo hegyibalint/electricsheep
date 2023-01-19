@@ -1,14 +1,26 @@
+# OS files
 .DS_Store
+
+# NPM
 node_modules
+
+# SvelteKit
 /build
 /.svelte-kit
 /package
+
+# Environment files
 .env
 .env.*
 !.env.example
+
+# Vite stuff
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 # Prisma files
 prisma/*.db
 prisma/*.db-journal
+
+# Miniflare files
+kv-data
