@@ -3,9 +3,9 @@ import type { RequestHandler } from './$types';
 import { v4 as uuidv4 } from 'uuid';
 
 export const GET: RequestHandler = async (event) => {
-	const ES_TEST_NAMESPACE = event.platform?.env?.ES_TEST_NAMESPACE;
+	const ES_TEST_NAMESPACE = event.platform?.env?.ES_TEST_NAMESPACE as KVNamespace;
 
-	await platform?.env?.ES_TEST_NAMESPACE.put(String(uuidv4()), JSON.stringify(new Date()), {
+	await ES_TEST_NAMESPACE.put(String(uuidv4()), JSON.stringify(new Date()), {
 		metadata: { someMetadataKey: 'someMetadataValue' }
 	});
 
