@@ -1,4 +1,0 @@
-
-kv_namespaces = [
-  { binding = "ES_TEST_NAMESPACE", id = "26d7aa7ff2e548f5823ced5db9be67db", preview_id = "5a1bf2d8b964454bac156d2cb4bfffaa" }
-]

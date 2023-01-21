@@ -1125,7 +1125,7 @@
 	</p>
 </div>
 
-<style>
+<style lang="postcss">
 	th,
 	td {
 		@apply py-1 px-5;
