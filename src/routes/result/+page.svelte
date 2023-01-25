@@ -45,13 +45,7 @@
 	</div>
 </div>
 
-<style>
-	.table {
-		@apply border-t-2 border-l-2 border-zinc-500;
-	}
-	.table-cell {
-		@apply border-b-2 border-r-2 border-zinc-500 p-2;
-	}
+<style lang="postcss">
 	.success {
 		@apply text-green-600;
 	}

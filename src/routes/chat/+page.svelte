@@ -93,7 +93,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.expiring-timer {
 		@apply animate-bounce text-red-600;
 	}

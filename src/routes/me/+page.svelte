@@ -179,7 +179,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.table {
 		@apply w-full;
 	}

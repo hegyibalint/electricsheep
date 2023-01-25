@@ -60,7 +60,7 @@
 	<h1 class="text-3xl font-bold underline m-5">Hang on{ellipsis}</h1>
 </div>
 
-<style>
+<style lang="postcss">
 	.hue-rotating {
 		animation: filter-animation 8s infinite;
 	}
