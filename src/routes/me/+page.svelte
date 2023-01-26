@@ -3,10 +3,10 @@
 
 	export let data: PageData;
 
-	data.games_played = data.games_played_against_human + data.games_played_against_robot;
-	data.failure_guess_human = data.games_played_against_human - data.success_guess_human;
-	data.failure_guess_robot = data.games_played_against_robot - data.success_guess_robot;
-	data.success_guess = data.success_guess_human + data.success_guess_robot;
+	data.me.games_played = data.me.games_played_against_human + data.me.games_played_against_robot;
+	data.me.failure_guess_human = data.me.games_played_against_human - data.me.success_guess_human;
+	data.me.failure_guess_robot = data.me.games_played_against_robot - data.me.success_guess_robot;
+	data.me.success_guess = data.me.success_guess_human + data.me.success_guess_robot;
 </script>
 
 <header class="p-5 flex-grow-0 h-20 w-full max-w-3xl mx-auto flex justify-between">
@@ -24,24 +24,13 @@
 				<div class="table-row-group">
 					<div class="table-row">
 						<div class="table-cell"><p>Username:</p></div>
-						<div class="table-cell"><p>{data.name}</p></div>
+						<div class="table-cell"><p>{data.me.name}</p></div>
 					</div>
 				</div>
 				<div class="table-row-group">
 					<div class="table-row">
 						<div class="table-cell"><p>Email:</p></div>
-						<div class="table-cell"><p>{data.email}</p></div>
-					</div>
-				</div>
-				<div class="table-row-group">
-					<div class="table-row">
-						<div class="table-cell"><p>Status:</p></div>
-						<div class="table-cell">
-							<div class="flex justify-between">
-								<p>Active</p>
-								<a href="#" class="text-right">Delete account</a>
-							</div>
-						</div>
+						<div class="table-cell"><p>{data.me.email}</p></div>
 					</div>
 				</div>
 				<div class="table-row-group">
@@ -49,12 +38,15 @@
 						<div class="table-cell h-full align-middle p-1"><p class="">Avatar:</p></div>
 						<div class="table-cell p-1">
 							<div class="flex align-middle">
-								<img alt="user's avatar" src={data.avatar} class="w-20 h-20 rounded-full" />
+								<img alt="user's avatar" src={data.me.avatar} class="w-20 h-20 rounded-full" />
 								<a href="#" class="my-auto mx-5">Change</a>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="w-100 flex align-middle text-center">				
+				<a href="#" class="mx-auto mt-5">Delete account</a>
 			</div>
 		</div>
 
@@ -66,7 +58,7 @@
 						<div class="table-cell"><p>Balance:</p></div>
 						<div class="table-cell">
 							<div class="flex justify-between">
-								<p>{data.balance}{data.currency_symbol}</p>
+								<p>{data.me.balance} {data.me.currency_symbol}</p>
 								<a href="#" class="text-right">Details</a>
 							</div>
 						</div>
@@ -77,7 +69,7 @@
 						<div class="table-cell"><p>Games left:</p></div>
 						<div class="table-cell">
 							<div class="flex justify-between">
-								<p>{data.games_left}</p>
+								<p>{data.me.games_left}</p>
 								<a href="#" class="text-right">Buy more</a>
 							</div>
 						</div>
@@ -92,57 +84,57 @@
 				<div class="table-row-group">
 					<div class="table-row">
 						<div class="table-cell"><p>Rank:</p></div>
-						<div class="table-cell"><p># {data.rank}</p></div>
+						<div class="table-cell"><p># {data.me.rank}</p></div>
 					</div>
 				</div>
 				<div class="table-row-group">
 					<div class="table-row">
 						<div class="table-cell"><p>Total Points:</p></div>
 						<div class="table-cell">
-							<p>{data.success_guess + data.success_confuse_human}</p>
+							<p>{data.me.success_guess + data.me.success_confuse_human}</p>
 						</div>
 					</div>
 				</div>
 				<div class="table-row-group">
 					<div class="table-row">
 						<div class="table-cell"><p>Games Played:</p></div>
-						<div class="table-cell"><p>{data.games_played}</p></div>
+						<div class="table-cell"><p>{data.me.games_played}</p></div>
 					</div>
 				</div>
 				<div class="table-row-group">
 					<div class="table-row">
 						<div class="table-cell"><p>... against humans:</p></div>
-						<div class="table-cell"><p>{data.games_played_against_human}</p></div>
+						<div class="table-cell"><p>{data.me.games_played_against_human}</p></div>
 					</div>
 				</div>
 				<div class="table-row-group">
 					<div class="table-row">
 						<div class="table-cell"><p>... against robots:</p></div>
-						<div class="table-cell"><p>{data.games_played_against_robot}</p></div>
+						<div class="table-cell"><p>{data.me.games_played_against_robot}</p></div>
 					</div>
 				</div>
 				<div class="table-row-group">
 					<div class="table-row">
 						<div class="table-cell"><p>Opponent classified correctly:</p></div>
-						<div class="table-cell"><p>{data.success_guess}</p></div>
+						<div class="table-cell"><p>{data.me.success_guess}</p></div>
 					</div>
 				</div>
 				<div class="table-row-group">
 					<div class="table-row">
 						<div class="table-cell"><p>... as human:</p></div>
-						<div class="table-cell"><p>{data.success_guess_human}</p></div>
+						<div class="table-cell"><p>{data.me.success_guess_human}</p></div>
 					</div>
 				</div>
 				<div class="table-row-group">
 					<div class="table-row">
 						<div class="table-cell"><p>... as robot:</p></div>
-						<div class="table-cell"><p>{data.success_guess_robot}</p></div>
+						<div class="table-cell"><p>{data.me.success_guess_robot}</p></div>
 					</div>
 				</div>
 				<div class="table-row-group">
 					<div class="table-row">
 						<div class="table-cell"><p>You got confused for a robot:</p></div>
-						<div class="table-cell"><p>{data.success_confuse_human}</p></div>
+						<div class="table-cell"><p>{data.me.success_confuse_human}</p></div>
 					</div>
 				</div>
 			</div>
@@ -161,15 +153,15 @@
 				<div class="table-row-group">
 					<div class="table-row">
 						<div class="table-cell">Is Human</div>
-						<div class="table-cell">{data.success_guess_human}</div>
-						<div class="table-cell">{data.failure_guess_human}</div>
+						<div class="table-cell">{data.me.success_guess_human}</div>
+						<div class="table-cell">{data.me.failure_guess_human}</div>
 					</div>
 				</div>
 				<div class="table-row-group">
 					<div class="table-row">
 						<div class="table-cell">Is Robot</div>
-						<div class="table-cell">{data.failure_guess_robot}</div>
-						<div class="table-cell">{data.success_guess_robot}</div>
+						<div class="table-cell">{data.me.failure_guess_robot}</div>
+						<div class="table-cell">{data.me.success_guess_robot}</div>
 					</div>
 				</div>
 			</div>
