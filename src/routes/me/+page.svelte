@@ -35,17 +35,6 @@
 				</div>
 				<div class="table-row-group">
 					<div class="table-row">
-						<div class="table-cell"><p>Status:</p></div>
-						<div class="table-cell">
-							<div class="flex justify-between">
-								<p>Active</p>
-								<a href="#" class="text-right">Delete account</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="table-row-group">
-					<div class="table-row">
 						<div class="table-cell h-full align-middle p-1"><p class="">Avatar:</p></div>
 						<div class="table-cell p-1">
 							<div class="flex align-middle">
@@ -55,6 +44,9 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="w-100 flex align-middle text-center">				
+				<a href="#" class="mx-auto mt-5">Delete account</a>
 			</div>
 		</div>
 

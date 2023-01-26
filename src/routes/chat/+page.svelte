@@ -4,9 +4,30 @@
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
 
+	// Wait for a match
+	const matchRequest = fetch('/api/match')
+
+	// loading icon animation
+	export let loading_style = '';
+	let angle = 0;
+	setInterval(function () {
+		angle++;
+		angle = angle++ % 360;
+		loading_style = 'transform: rotate(' + Math.ceil(Math.random() * 360) + 'deg); background-color: rgb('+ Math.ceil(Math.random() * 256) +', '+ Math.ceil(Math.random() * 256) +', '+ Math.ceil(Math.random() * 256) +')';
+		//opponent_style = 'background-color: red; transform: rotate(' + angle + 'deg);';
+	}, 500);
+
+	// loading ellipsis animation
+	export let ellipsis = '...';
+	let dots = 0;
+	setInterval(function () {
+		dots = dots % 3;
+		dots++;
+		ellipsis = '.'.repeat(dots);
+	}, 500);
+
 	export let data: PageData;
 
-	export let time_left = 120;
 	export const opponent_style =
 		'transform: rotate(' +
 		Math.ceil(Math.random() * 360) +
@@ -19,6 +40,7 @@
 		')';
 
 	// Timer redirecting to the results
+	export let time_left = 120;
 	var timer = setInterval(function () {
 		time_left--;
 		if (time_left < 1) {
@@ -39,6 +61,21 @@
 </header>
 
 <div class="text-center flex-grow flex flex-col max-w-3xl md:mx-auto -mx-4">
+
+	{#await matchRequest}
+
+	<div class="m-auto">
+		<img
+			alt="The sheep"
+			src="/sheep-face.png"
+			class="mx-auto my-2 w-28 rounded-full hue-rotating"
+			style={loading_style}
+		/>
+		<h1 class="text-3xl font-bold underline m-5">Hang on{ellipsis}</h1>
+	</div>
+		
+	{:then match} 
+		
 	<div class="max-w-3xl flex-grow flex flex-col">
 		<div class="flex-grow flex flex-col border-2 rounded-lg border-black">
 			<div
@@ -98,6 +135,9 @@
 			/>
 		</form>
 	</div>
+
+	{/await}
+
 </div>
 
 <style lang="postcss">
