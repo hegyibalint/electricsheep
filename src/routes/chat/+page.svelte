@@ -5,6 +5,7 @@
 	import { browser } from '$app/environment';
 
 	export let data: PageData;
+
 	export let time_left = 120;
 	export const opponent_style =
 		'transform: rotate(' +
@@ -25,6 +26,11 @@
 			browser ? goto('/result') : null;
 		}
 	}, 1000);
+
+	export const my_identifier = "" + Math.random();
+	function send() {
+		browser ? goto('/result') : null;
+	}
 </script>
 
 <header class="p-5 flex-grow-0 h-20 w-full max-w-3xl mx-auto flex justify-between">
@@ -52,24 +58,25 @@
 				</p>
 			</div>
 
-			<!--div class="flex-grow flex flex-col gap-2 p-5 overflow-y-scroll h-0">
-				{#each $svelteStore.messages as message}
+			<div class="flex-grow flex flex-col gap-2 p-5 overflow-y-scroll h-0">
+				{#each data.chat.messages as message}
 					{#if message.author == my_identifier}
-					<ChatMessage class="self-end bg-white" text={message.text} />
+					<ChatMessage class="self-end bg-white" text={message.content} />
 					{:else}
-					<ChatMessage class="self-start bg-yellow-100" text={message.text} />
+					<ChatMessage class="self-start bg-yellow-100" text={message.content} />
 					{/if}
 				{/each}
 			</div>
 
 			<form on:submit|preventDefault={send} class="flex border-zinc-500 border-t-2">
 				<input
+					id="message"
+					name="message"
 					class="flex-grow rounded-lg py-3 px-4 focus:outline-none"
 					autocomplete="off"
 					placeholder="Type..."
-					bind:value={message}
 				/>
-			</form-->
+			</form>
 		</div>
 
 		<form method="POST" action="/result" class="h-fit flex justify-center gap-4 p-5 md:pb-20">
